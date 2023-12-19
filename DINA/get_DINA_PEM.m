@@ -1,5 +1,15 @@
 function [nu, c, g, lik, n_iter] = get_DINA_PEM(X, Q, A, lambda, c_ini, g_ini, nu_ini, thres_c)
 
+% This function is Algorithm 1 in the main paper
+%
+% @param X: binary item response (N x J)
+% @param Q: true Q-matrix (J x K)
+% @param A: matrix whose rows collect permissible patterns (n_in x K; n_in = 2^K for default use)
+% @param c_ini: initial value of DINA item parameter c = 1-s (J x 1)
+% @param g_ini: initial value of DINA item parameter g (J x 1)
+% @param nu_ini: initial value of the proportion parameters (n_in x 1)
+% @param thres_c: small positive constant, set to thres_c = 0.01 in simulations
+
 [J, K] = size(Q);
 
 N = size(X, 1);
