@@ -1,7 +1,12 @@
 function [nu, theta, c, g, loglik, n_iter] = get_CBN_DINA_EM(X, Q, A_in, c_in, g_in)
-%%% work with theta instead of nu
-%%% A_in -> alpha's that respect the partial order
-%%% G = adj_mat_true
+
+% This function is Algorithm 2 in the main paper
+%
+% @param X: binary item response (N x J)
+% @param Q: true Q-matrix (J x K)
+% @param A_in: matrix whose rows collect permissible patterns, n_in is the number of permissible patterns (n_in x K)
+% @param c_in: initial value of DINA item parameter c = 1-s (J x 1)
+% @param g_in: initial value of DINA item parameter g (J x 1)
 
 %%%% definitions
 [J, K] = size(Q);
