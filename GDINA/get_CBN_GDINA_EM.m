@@ -1,8 +1,6 @@
 function [t, nu, theta, delta, loglik] = get_CBN_GDINA_EM(X, Q, A_in, G)
-%%% work with t (latent CBN parameter) instead of nu
-%%% theta = theta_mat (positive resp prob)
-%%% A_in -> alpha's that respect the partial order
-%%% G = adj_mat_true
+%
+% This function corresponds to Algorithm 2 in the main paper.
 
 %%%% definitions
 [J, K] = size(Q);
