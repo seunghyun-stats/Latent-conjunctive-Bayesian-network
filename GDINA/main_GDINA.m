@@ -199,14 +199,13 @@ parfor (nn = 1:Nrep, 4)
     fprintf('%d iter completed\n\n', nn);
 end
 
+u = Nrep;
+mean(M_pem(1:u) == 15)
+mean(M_select(1:u) == 15)
 
-mean(M_pem(1:80) == 15)
-mean(M_select(1:80) == 15)
-
-mean(err_A_pem)
+mean(err_A_pem(1:u))
 mean(err_A_select(1:u))
 
-u = Nrep;
 sqrt(mean(mse_nu_pem(1:u)))
 sqrt(mean(nonzeros(mse_delta_pem)))
 
