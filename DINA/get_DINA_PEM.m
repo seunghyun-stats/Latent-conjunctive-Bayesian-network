@@ -5,6 +5,7 @@ function [nu, c, g, lik, n_iter] = get_DINA_PEM(X, Q, A, lambda, c_ini, g_ini, n
 % @param X: binary item response (N x J)
 % @param Q: true Q-matrix (J x K)
 % @param A: matrix whose rows collect permissible patterns (n_in x K; n_in = 2^K for default use)
+% @param lambda: penalty weight (scalar)
 % @param c_ini: initial value of DINA item parameter c = 1-s (J x 1)
 % @param g_ini: initial value of DINA item parameter g (J x 1)
 % @param nu_ini: initial value of the proportion parameters (n_in x 1)
